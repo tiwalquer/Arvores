@@ -1,5 +1,7 @@
 package Arvore;
 
+import java.util.Scanner;
+
 public class ArvoreBinaria {
 
         No raiz;
@@ -44,27 +46,66 @@ public class ArvoreBinaria {
         }
 
 
-        private void exibirRecursivamente(No noAtual){ //em-ordem
+    private void exibirPosOrdemRecursivamente(No noAtual){
+        if(noAtual == null){ //por que aqui deve ter so o produto
+            return;
+        }
+
+        exibirPreOrdemRecursivamente(noAtual.getEsquerda());
+        exibirPreOrdemRecursivamente(noAtual.getDireita());
+        System.out.println(noAtual.getConteudo());
+    }
+
+        private void exibirPreOrdemRecursivamente(No noAtual){
+            if(noAtual == null){ //por que aqui deve ter so o produto
+                return;
+            }
+
+            System.out.println(noAtual.getConteudo());
+            exibirPreOrdemRecursivamente(noAtual.getEsquerda());
+            exibirPreOrdemRecursivamente(noAtual.getDireita());
+
+        }
+
+        private void exibirEmOrdemRecursivamente(No noAtual){ //em-ordem
 
             if(noAtual == null){ //por que aqui deve ter so o produto
                 return;
             }
 
-            exibirRecursivamente(noAtual.getEsquerda());
+            exibirEmOrdemRecursivamente(noAtual.getEsquerda());
             System.out.println(noAtual.getConteudo());
-            exibirRecursivamente(noAtual.getDireita());
+            exibirEmOrdemRecursivamente(noAtual.getDireita());
 
         }
 
         public void exibir(){
-
+            Scanner scan = new Scanner(System.in);
+            int escolha;
             No aux = this.raiz;
 
             if(!existeInicio()){
                 return;
             }
+            System.out.println("escolhe o tipo da ordencao da sua arvore = 1: em-ordem ; 2: pre-ordem; 3: pos-ordem");
+            escolha = scan.nextInt();
 
-            exibirRecursivamente(aux);
+            switch (escolha){
+                case 1: {
+                    exibirEmOrdemRecursivamente(aux);
+                    break;
+                }
+
+                case 2: {
+                    exibirPreOrdemRecursivamente(aux);
+                    break;
+                }
+                case 3: {
+                    exibirPosOrdemRecursivamente(aux);
+                }
+
+            }
+
         }
 
 
@@ -93,11 +134,11 @@ public class ArvoreBinaria {
                 } else if (noAtual.getDireita() == null && noAtual.getEsquerda() != null) {//remocao de nó com apenas um filho
                     System.out.println("Nó: " + noAtual.getConteudo() + " removido com sucesso");
                     return noAtual.getEsquerda();
-                }else{
+
+                }else{ //remocao de um no com dois filhos
                     System.out.println("Nó: " + noAtual.getConteudo() + " removido com sucesso");
 
-                    noAtual = maiorDosMenores(noAtual.getEsquerda());
-
+                    noAtual.setConteudo(maiorDosMenores(noAtual.getEsquerda(), noAtual, noAtual).getConteudo());
                     return  noAtual;
                 }
 
@@ -115,15 +156,18 @@ public class ArvoreBinaria {
             return noAtual;
         }
 
-        private No maiorDosMenores(No maior){
+        private No maiorDosMenores(No maior, No retirado, No pai){
 
-            if(maior.getDireita() == null){
-
+            if(maior.getDireita() == null){ //condicao de parada é chegar no maior
+                maior.setDireita(retirado.getDireita());
+                pai.setDireita(null);
                 return maior;
             }else{
-                maiorDosMenores(maior.getDireita());
+
+                return maiorDosMenores(maior.getDireita(), retirado, maior);
+
             }
-            return maior;
+
         }
 
 
