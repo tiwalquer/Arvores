@@ -31,3 +31,5 @@ Uma arvore heap é uma arvore binaria( tem no maximo 2 filhos, o pai) quase comp
     
   - dar exeplo Exeplo: array: sei la [12,45,3,-2,7,60]
   -“Por que essa árvore existe e em quais situações ela é mais adequada do que outras estruturas de dados?” = quando vc deseja sempre acessar mudar excluir o maior ou menos valor de um conjunto de elementos
+
+  -exemplo de uma insercao: 1: https://cstaleem.com/wp-content/uploads/2025/02/Insertion-in-MAX-heap-tree-with-example.png  !2:https://cstaleem.com/wp-content/uploads/2025/02/Build-Heap-Tree-One-by-One-elements-Insertion-30-40-20-50-10-70-25.png
