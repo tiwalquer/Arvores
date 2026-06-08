@@ -1,6 +1,7 @@
-Uma arvore heap é uma arvore binaria quase completa( oq quer dizer que todos os niveis estao preenchidos, exeto possivelmente o último, que é preenchido da esquerda para a direita.) 
+Uma arvore heap é uma arvore binaria( tem no maximo 2 filhos, o pai) quase completa( oq quer dizer que todos os niveis estao preenchidos, exeto possivelmente o último, que é preenchido da esquerda para a direita.) 
   a arvore heap  foi criada por J.W.J. Williams. uma arvore heap é uma arvore binaria tem como uso principal implementar uma fila de prioridade uma vez que o elemento de maior 
-  ou menor valor sempre está armazenado na primeira posição e que a remoção sempre é feita nesse mesmo elemento tornando sua principal utilizacao .
+  ou menor valor sempre está armazenado na primeira posição e que a remoção sempre é feita nesse mesmo elemento tornando sua principal utilizacao . O qual é a sua principal razao para existir 
+  manter o acesso rápido ao maior ou menor elemento de um conjunto.
 
   -heapify =  is the process of rearranging elements in a binary tree or array to maintain the heap property, ensuring that each parent node satisfies the min-heap or max-heap condition.
     =proposito: The main purpose of heapify is to restore or maintain the heap property after operations such as insertion, deletion, or building a heap from an unsorted array
@@ -9,10 +10,11 @@ Uma arvore heap é uma arvore binaria quase completa( oq quer dizer que todos os
     =uma de suas vantagens é a posibilidade de voce encontrar o pai de um certo nó, pois como sabemos a arvore heap é um array, oque torna as suas posicoes mapeaveis(index), e para encontrar o seu
       so é necessario será ' (i - 1) / 2 ' = essa sendo a posicao do pai (divide por dois pois é uma arvore binaria), nao so isso tambem é possivel encontrar os filhos( filho a esquerda 2i+1. filho a direita 2i+2)
       (tudo isso se o index comecar em 0) 
+       !!!não fornece uma forma eficiente de descobrir em qual índice está um valor específico .. isso so funciona se voce ja tiver o index desejedo, que por sinal podem sofrer alteracoes
   
     =complexidade : A estrutura de dados heap permite exclusão e inserção em tempo logarítmico O(logn) ..Heapify O(logn)	
 
-  -utilizacao = Ajuda na filtragem de spam. Encontre a ordem nas estatísticas. Implemente filas prioritárias onde você pode pesquisar itens em uma lista em tempo logarítmico ...
+  -utilizacao = Ajuda na filtragem de spam. Encontre a ordem nas estatísticas. Implemente filas prioritárias onde você pode pesquisar itens em uma lista em tempo logarítmico. Algoritmos de grafos ...
 
   -como deve ser feita a implementacao dos elementos: A árvore binária do heap deve estar completa até pelo menos seu penúltimo nível e, se o seu último nível não estiver completo,
     todos os nós do último nível deverão estar agrupados à esquerda.com certas manipulações para a manutenção de suas propriedades!, além disto as inserções são sempre feitas nas folhas, 
@@ -22,4 +24,10 @@ Uma arvore heap é uma arvore binaria quase completa( oq quer dizer que todos os
     = max-heap = o valor de cada nó é maior ou igual ao de seus filhos.  Ou seja os menos nós serao os mais proximos das folhas e os maiores mais proximos da raiz 
       (o maior elemento sempre sera a raiz)
     = min-heap = o valor de cada nó é menor ou igual ao de seus filhos.Ou seja os menores nós serao os mais proximos da raiz e os maiores os mais proximos das folhas( a raiz é o menos valor)
+
+  -limitacoes = nao a como encontrar um elemento especifico de modo facil ... nao mantem os elemenso 'ordenados' como em uma BTS
+
+  -diferenca de uma arvore BTS(Binary Search Tree/ a 'nossa') = BST: ordem global → permite buscar qualquer valor em aproximadamente O(log n). Heap: ordem local (pai-filho) → permite acessar o maior ou menor elemento em O(1).
     
+  - dar exeplo Exeplo: array: sei la [12,45,3,-2,7,60]
+  -“Por que essa árvore existe e em quais situações ela é mais adequada do que outras estruturas de dados?” = quando vc deseja sempre acessar mudar excluir o maior ou menos valor de um conjunto de elementos
