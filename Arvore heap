@@ -3,7 +3,8 @@ Uma arvore heap é uma arvore binaria quase completa( oq quer dizer que todos os
   ou menor valor sempre está armazenado na primeira posição e que a remoção sempre é feita nesse mesmo elemento tornando sua principal utilizacao .
 
   -heapify =  is the process of rearranging elements in a binary tree or array to maintain the heap property, ensuring that each parent node satisfies the min-heap or max-heap condition.
-  
+    =proposito: The main purpose of heapify is to restore or maintain the heap property after operations such as insertion, deletion, or building a heap from an unsorted array
+
   -vantagens:
     =uma de suas vantagens é a posibilidade de voce encontrar o pai de um certo nó, pois como sabemos a arvore heap é um array, oque torna as suas posicoes mapeaveis(index), e para encontrar o seu
       so é necessario será ' (i - 1) / 2 ' = essa sendo a posicao do pai (divide por dois pois é uma arvore binaria), nao so isso tambem é possivel encontrar os filhos( filho a esquerda 2i+1. filho a direita 2i+2)
