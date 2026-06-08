@@ -1,16 +1,24 @@
 Uma arvore heap é uma arvore binaria quase completa( oq quer dizer que todos os niveis estao preenchidos, exeto possivelmente o último, que é preenchido da esquerda para a direita.) 
-  a arvore heap  foi criada por J.W.J. Williams. uma arvore heap binaria tem como uso principal implementar uma fila de prioridade uma vez que o elemento de maior 
+  a arvore heap  foi criada por J.W.J. Williams. uma arvore heap é uma arvore binaria tem como uso principal implementar uma fila de prioridade uma vez que o elemento de maior 
   ou menor valor sempre está armazenado na primeira posição e que a remoção sempre é feita nesse mesmo elemento tornando sua principal utilizacao .
 
-  -uma de suas vantagens é a posibilidade de voce encontrar o pai de um certo nó, pois como sabemos a arvore heap é um array, oque torna as suas posicoes mapeaveis(index), e para encontrar o seu
-    so é necessario será ' (i - 1) / 2 ' = essa sendo a posicao do pai (divide por dois pois é uma arvore binaria). 
+  -heapify =  is the process of rearranging elements in a binary tree or array to maintain the heap property, ensuring that each parent node satisfies the min-heap or max-heap condition.
+  
+  -vantagens:
+    =uma de suas vantagens é a posibilidade de voce encontrar o pai de um certo nó, pois como sabemos a arvore heap é um array, oque torna as suas posicoes mapeaveis(index), e para encontrar o seu
+      so é necessario será ' (i - 1) / 2 ' = essa sendo a posicao do pai (divide por dois pois é uma arvore binaria), nao so isso tambem é possivel encontrar os filhos( filho a esquerda 2i+1. filho a direita 2i+2)
+      (tudo isso se o index comecar em 0) 
+  
+    =complexidade : A estrutura de dados heap permite exclusão e inserção em tempo logarítmico O(logn) ..Heapify O(logn)	
+
+  -utilizacao = Ajuda na filtragem de spam. Encontre a ordem nas estatísticas. Implemente filas prioritárias onde você pode pesquisar itens em uma lista em tempo logarítmico ...
 
   -como deve ser feita a implementacao dos elementos: A árvore binária do heap deve estar completa até pelo menos seu penúltimo nível e, se o seu último nível não estiver completo,
     todos os nós do último nível deverão estar agrupados à esquerda.com certas manipulações para a manutenção de suas propriedades!, além disto as inserções são sempre feitas nas folhas, 
     mais precisamente na folha livre mais à esquerda para a direita, essa inserção pode não respeitar as invariantes da heap, 
     por isso é necessário um processo chamado heapify após a inserção para garantir que as invariantes sejam mantidas.
   -A qual obedece as propriedades do heap os quais sao:
-    max-heap = o valor de cada nó é maior ou igual ao de seus filhos.  Ou seja os menos nós serao os mais proximos das folhas e os maiores mais proximos da raiz 
+    = max-heap = o valor de cada nó é maior ou igual ao de seus filhos.  Ou seja os menos nós serao os mais proximos das folhas e os maiores mais proximos da raiz 
       (o maior elemento sempre sera a raiz)
-    min-heap = o valor de cada nó é menor ou igual ao de seus filhos.Ou seja os menores nós serao os mais proximos da raiz e os maiores os mais proximos das folhas( a raiz é o menos valor)
+    = min-heap = o valor de cada nó é menor ou igual ao de seus filhos.Ou seja os menores nós serao os mais proximos da raiz e os maiores os mais proximos das folhas( a raiz é o menos valor)
     
