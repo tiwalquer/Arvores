@@ -11,9 +11,10 @@ Uma arvore heap é uma arvore binaria( tem no maximo 2 filhos, o pai) quase comp
       so é necessario será ' (i - 1) / 2 ' = essa sendo a posicao do pai (divide por dois pois é uma arvore binaria), nao so isso tambem é possivel encontrar os filhos( filho a esquerda 2i+1. filho a direita 2i+2)
       (tudo isso se o index comecar em 0) 
        !!!não fornece uma forma eficiente de descobrir em qual índice está um valor específico .. isso so funciona se voce ja tiver o index desejedo, que por sinal podem sofrer alteracoes
-  
-    =complexidade : A estrutura de dados heap permite exclusão e inserção em tempo logarítmico O(logn) ..Heapify O(logn)	
+    =encontrar o menor / maior elemento em tempo de execucao O(1)
 
+    =complexidade : A estrutura de dados heap permite exclusão e inserção em tempo logarítmico O(logn) ..Heapify O(logn)	
+  
   -utilizacao = Ajuda na filtragem de spam. Encontre a ordem nas estatísticas. Implemente filas prioritárias onde você pode pesquisar itens em uma lista em tempo logarítmico. Algoritmos de grafos ...
 
   -como deve ser feita a implementacao dos elementos: A árvore binária do heap deve estar completa até pelo menos seu penúltimo nível e, se o seu último nível não estiver completo,
