@@ -27,8 +27,9 @@ Uma arvore heap é uma arvore binaria( tem no maximo 2 filhos, o pai) quase comp
     = min-heap = o valor de cada nó é menor ou igual ao de seus filhos.Ou seja os menores nós serao os mais proximos da raiz e os maiores os mais proximos das folhas( a raiz é o menos valor)
 
   -limitacoes = nao a como encontrar um elemento especifico de modo facil ... nao mantem os elemenso 'ordenados' como em uma BTS
-
-  -diferenca de uma arvore BTS(Binary Search Tree/ a 'nossa') = BST: ordem global → permite buscar qualquer valor em aproximadamente O(log n). Heap: ordem local (pai-filho) → permite acessar o maior ou menor elemento em O(1).
+    
+  -diferenca de uma arvore BTS(Binary Search Tree/ a 'nossa') = BST: ordem global → permite buscar qualquer valor em aproximadamente O(log n). Heap: ordem local (pai-filho) → permite acessar o maior ou menor elemento em O(1),
+    ja se quisermos outro valor a sua busca sera de big O(n), como a heap não mantém uma ordem global como uma árvore de busca binária (BST), não é possível decidir se deve ir apenas para a esquerda ou para a direita.
     
   - dar exeplo Exeplo: array: sei la [12,45,3,-2,7,60]
   -“Por que essa árvore existe e em quais situações ela é mais adequada do que outras estruturas de dados?” = quando vc deseja sempre acessar mudar excluir o maior ou menos valor de um conjunto de elementos
